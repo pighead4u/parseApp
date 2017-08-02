@@ -1,22 +1,19 @@
 apply plugin: 'application'
 apply plugin: 'groovy'
 
-version = '1.0'
-mainClassName='Test'
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.12'
+    compile project(':common')
+}
+
+version = '1.0.0'
+mainClassName='com.pansijing.analyse.Main'
 
 jar {
     manifest {
-        attributes 'Title': 'test', 'Version': version
+        attributes 'Title': 'analyse', 'Version': version
         attributes 'Main-Class': mainClassName
     }
-}
-
-dependencies {
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-    testCompile 'junit:junit:4.12'
-
-    compile 'org.codehaus.groovy:groovy-all:2.4.6'
-	compile project(':common')
 }
 
 task uberjar(type: Jar,dependsOn:[':compileJava',':compileGroovy']) {
