@@ -10,7 +10,9 @@ class Main {
 
         dir.eachFile { file ->
 
-            String decompessDir = DecompressAPK.decompress(file.getAbsolutePath(), OUTPUT_DIR)
+//            String decompessDir = DecompressAPK.decompress(file.getAbsolutePath(), OUTPUT_DIR)
+            String decompessDir = OUTPUT_DIR + File.separator + "app"
+            ParseSmaliFiles.parseSmali(decompessDir)
 
         }
     }
