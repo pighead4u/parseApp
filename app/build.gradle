@@ -2,8 +2,8 @@ apply plugin: 'application'
 apply plugin: 'groovy'
 
 dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'org.codehaus.groovy:groovy-all:2.4.12'
-    compile project(':common')
 }
 
 version = '1.0.0'
