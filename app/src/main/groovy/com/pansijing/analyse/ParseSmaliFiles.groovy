@@ -5,6 +5,8 @@ import groovy.io.FileType
 class ParseSmaliFiles {
 
     def static parseSmali(String appDir) {
+        PrintUtils.printMessage("start parsing smali-${appDir}!!!")
+
         def dir = new File(appDir)
         def result = new HashSet()
         dir.eachDir { smali ->
@@ -16,7 +18,7 @@ class ParseSmaliFiles {
 
         }
 
-        PrintUtils.printMessage("parse smali finish!!!")
+        PrintUtils.printMessage("finish parsing smali-${appDir}!!!")
 
         result
     }

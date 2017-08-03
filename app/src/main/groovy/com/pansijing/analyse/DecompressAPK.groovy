@@ -5,13 +5,15 @@ import brut.androlib.ApkDecoder
 class DecompressAPK {
 
     def static decompress(String source, String dest) {
+        PrintUtils.printMessage("start decompressing ${source}")
+
         ApkDecoder decoder = new ApkDecoder()
 
-        File apkFile = new File(source);
+        File apkFile = new File(source)
         decoder.setApkFile(apkFile)
 
-        // todo 需要自动对被解析的每个app创建他们自己的文件夹
-        File outDir = new File(dest + File.separator + "app")
+        def data = FileNameUtils.getFileName(source)
+        File outDir = new File(dest + File.separator + data)
         decoder.setOutDir(outDir)
 
         decoder.decode()
@@ -23,4 +25,6 @@ class DecompressAPK {
         outDir.getAbsolutePath()
 
     }
+
+
 }

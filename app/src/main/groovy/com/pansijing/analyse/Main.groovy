@@ -10,19 +10,19 @@ class Main {
 
         dir.eachFile { file ->
 
-//            String decompessDir = DecompressAPK.decompress(file.getAbsolutePath(), OUTPUT_DIR)
-            String decompessDir = OUTPUT_DIR + File.separator + "app"
+            String decompessDir = DecompressAPK.decompress(file.getAbsolutePath(), OUTPUT_DIR)
             def data = ParseSmaliFiles.parseSmali(decompessDir)
 
-            WriteResult.write2File(data, "log.txt")
+            def parseFileName = FileNameUtils.getFileName(file.getAbsolutePath())
+            WriteResult.write2File(data, "${parseFileName}.txt")
 
-            parseTech(data)
+            parseTech(data, parseFileName)
 
         }
     }
 
-    static void parseTech(Set<String> data) {
-        PrintUtils.createMarkdownFile("hello.md", "学而思android-app技术分析")
+    static void parseTech(Set<String> data, String parseFileName) {
+        PrintUtils.createMarkdownFile("${parseFileName}.md", "学而思android-app技术分析")
         AnalyzeTech.parseJsonTech(data)
         AnalyzeTech.parseImageLoader(data)
         AnalyzeTech.parseMapTech(data)

@@ -4,6 +4,8 @@ package com.pansijing.analyse
 class WriteResult {
 
     def static write2File(Set<String> data, String destFile) {
+        PrintUtils.printMessage("start writing to file :${destFile}")
+
         def result = new ArrayList()
 
         result.addAll(data)
@@ -17,6 +19,8 @@ class WriteResult {
             }
 
         }
+
+        PrintUtils.printMessage("finish writing to file :${destFile}")
 
 
     }
