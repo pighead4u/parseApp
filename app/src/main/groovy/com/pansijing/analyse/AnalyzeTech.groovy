@@ -25,6 +25,7 @@ class AnalyzeTech {
         def glide = "com.bumptech.glide"
         def picasso = "com.squareup.picasso"
         def universalimageloader = "com.nostra13.universalimageloader.core"
+      def fresco = "com.facebook.imagepipeline"
 
         if (data.contains(glide)) {
             PrintUtils.printMarkdownMessage("图片加载框架：glide")
@@ -38,11 +39,16 @@ class AnalyzeTech {
             PrintUtils.printMarkdownMessage("图片加载框架：universalimageloader")
         }
 
+      if (data.contains(fresco)) {
+        PrintUtils.printMarkdownMessage("图片加载框架：facebook的fresco")
+      }
+
     }
 
     def static parseMapTech(Set<String> data) {
         def baiduMap = "com.baidu.location"
         def gaoDeMap = "com.amap.api.maps"
+      def tecentMap = "com.tencent.map"
 
         if (data.contains(baiduMap)) {
             PrintUtils.printMarkdownMessage("定位与地图：百度地图")
@@ -50,6 +56,9 @@ class AnalyzeTech {
         if (data.contains(gaoDeMap)) {
             PrintUtils.printMarkdownMessage("定位与地图：高德地图")
         }
+      if (data.contains(tecentMap)) {
+        PrintUtils.printMarkdownMessage("定位与地图：腾讯地图")
+      }
     }
 
     def static parsePayTech(Set<String> data) {
@@ -137,7 +146,6 @@ class AnalyzeTech {
         def rx1 = "rx"
         def rx2 = "io.reactivex"
         def upnp = "org.bitlet.weupnp"
-        def thrift = "org.apache.thrift"
         def xunfei = "com.iflytek.cloud"
         def kuaiSuDaBao = "com.mcxiaoke.packer"
         def rxbinding = "com.jakewharton.rxbinding"
@@ -146,6 +154,7 @@ class AnalyzeTech {
         def rxpermisson = "com.tbruyelle.rxpermissions"
         def kotlin = "kotlin"
         def wall = "com.meituan.android.walle"
+      def webService = "fi.iki.elonen"
 
         if (data.contains(databinding)) {
             PrintUtils.printMarkdownMessage("新技术：尝试了mvvm的项目结构")
@@ -161,10 +170,6 @@ class AnalyzeTech {
 
         if (data.contains(upnp)) {
             PrintUtils.printMarkdownMessage("新技术：UPnP 是各种各样的智能设备、无线设备和个人电脑等实现遍布全球的对等网络连接（P2P）的结构。UPnP 是一种分布式的，开放的网络架构。UPnP 是独立的媒介。")
-        }
-
-        if (data.contains(thrift)) {
-            PrintUtils.printMarkdownMessage("新技术：可伸缩的跨语言服务开发框架 thrift")
         }
 
         if (data.contains(xunfei)) {
@@ -198,6 +203,10 @@ class AnalyzeTech {
         if (data.contains(wall)) {
             PrintUtils.printMarkdownMessage("新技术：美团快速打包-wall")
         }
+
+      if (data.contains(webService)) {
+        PrintUtils.printMarkdownMessage("新技术：android上部署的wevservice-fi.iki.elonen")
+      }
     }
 
     def static parsePullToRefresh(Set<String> data) {
@@ -276,6 +285,7 @@ class AnalyzeTech {
         def exoplayer2 = "com.google.android.exoplayer2"
         def talkFun = "com.talkfun.media.player"
         def tongYongRecycleView = "com.zhy.adapter.recyclerview"
+      def expandablerecyclerview = "com.bignerdranch.expandablerecyclerview"
         def stetho = "com.facebook.stetho"
         def ucrop = "com.yalantis.ucrop"
         def danMu = "master.flame.danmaku.danmaku.danmaku.parser"
@@ -286,6 +296,7 @@ class AnalyzeTech {
         def excel = "cn.zhouchaoyuan.excelpanel"
         def actionSheet = "com.baoyz.actionsheet"
         def pickerView = "com.bigkoo.pickerview"
+      def pickerViewLikeWeiXin = "me.nereo.multi_image_selector"
         def boxing = "com.bilibili.boxing"
         def charting = "com.github.mikephil.charting"
         def progressbar = "com.daimajia.numberprogressbar"
@@ -299,6 +310,9 @@ class AnalyzeTech {
         def autoLayout = "com.zhy.autolayout"
         def fileDownload = "com.liulishuo.filedownloader"
         def weibo = "com.sina.weibo.sdk"
+      def date = "hirondelle.date4j"
+      def weiXinSDK = "com.tencent.mm.sdk"
+      def tecentSDK = "com.tencent.connect"
 
 
         if (data.contains(indicator)) {
@@ -401,6 +415,10 @@ class AnalyzeTech {
             PrintUtils.printMarkdownMessage("others：通用recycleview")
         }
 
+      if (data.contains(expandablerecyclerview)) {
+        PrintUtils.printMarkdownMessage("others：expandablerecyclerview")
+      }
+
         if (data.contains(stetho)) {
             PrintUtils.printMarkdownMessage("others：facebook网络调试工具-stetho")
         }
@@ -440,6 +458,10 @@ class AnalyzeTech {
         if (data.contains(pickerView)) {
             PrintUtils.printMarkdownMessage("others：图片选择器 ")
         }
+
+      if (data.contains(pickerViewLikeWeiXin)) {
+        PrintUtils.printMarkdownMessage("others：类似微信图片选择器 ")
+      }
 
         if (data.contains(boxing)) {
             PrintUtils.printMarkdownMessage("others：bilibili的多媒体选择器 ")
@@ -491,6 +513,18 @@ class AnalyzeTech {
 
         if (data.contains(weibo)) {
             PrintUtils.printMarkdownMessage("others：weibo分享sdk ")
+        }
+
+      if (data.contains(weiXinSDK)) {
+        PrintUtils.printMarkdownMessage("others：微信的sdk ")
+      }
+
+      if (data.contains(tecentSDK)) {
+        PrintUtils.printMarkdownMessage("others：腾讯开放平台的sdk ")
+      }
+
+      if (data.contains(date)) {
+        PrintUtils.printMarkdownMessage("others：日期操作类date4j ")
         }
     }
 }
