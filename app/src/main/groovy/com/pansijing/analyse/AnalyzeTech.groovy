@@ -56,6 +56,7 @@ class AnalyzeTech {
         def alipay = "com.alipay.sdk"
         def union = "com.unionpay"
         def weiXin = "com.wxapi"
+        def jd = "com.jdpaysdk.author"
 
         if (data.contains(alipay)) {
             PrintUtils.printMarkdownMessage("支付：支付宝")
@@ -67,6 +68,10 @@ class AnalyzeTech {
 
         if (data.contains(weiXin)) {
             PrintUtils.printMarkdownMessage("支付：微信支付")
+        }
+
+        if (data.contains(jd)) {
+            PrintUtils.printMarkdownMessage("支付：JD支付")
         }
     }
 
@@ -139,6 +144,8 @@ class AnalyzeTech {
         def tingYun = "com.networkbench.agent"
         def recovery = "com.zxy.recovery"
         def rxpermisson = "com.tbruyelle.rxpermissions"
+        def kotlin = "kotlin"
+        def wall = "com.meituan.android.walle"
 
         if (data.contains(databinding)) {
             PrintUtils.printMarkdownMessage("新技术：尝试了mvvm的项目结构")
@@ -182,6 +189,14 @@ class AnalyzeTech {
 
         if (data.contains(rxpermisson)) {
             PrintUtils.printMarkdownMessage("新技术：rxpermission")
+        }
+
+        if (data.contains(kotlin)) {
+            PrintUtils.printMarkdownMessage("新技术：kotlin")
+        }
+
+        if (data.contains(wall)) {
+            PrintUtils.printMarkdownMessage("新技术：美团快速打包-wall")
         }
     }
 
@@ -238,13 +253,17 @@ class AnalyzeTech {
     def static parseOthers(Set<String> data) {
         def indicator = "com.viewpagerindicator"
         def pdf = "com.artifex.mupdfdemo"
+        def pdfium = "com.shockwave.pdfium"
+        def pdfviewer = "com.github.barteksc.pdfviewer"
         def textView = "co.lujun.androidtagview"
         def eventbus = "org.greenrobot.eventbus"
         def photoview = "uk.co.senab.photoview"
         def zxing = "com.google.zxing"
         def umeng = "com.umeng"
+        def bugly = "com.tencent.bugly"
         def ormlite = "com.j256.ormlite"
         def dbflow = "com.raizlabs.android.dbflow"
+        def greenDao = "org.greenrobot.greendao"
         def tinker = "com.tencent.tinker.lib"
         def multidex = "android.support.multidex"
         def freeline = "com.antfortune.freeline"
@@ -254,6 +273,8 @@ class AnalyzeTech {
         def baoFeng = "tv.cjump.jni"
         def jieCao = "fm.jiecao.jcvideoplayer_lib"
         def ijk = "tv.danmaku.ijk.media.player"
+        def exoplayer2 = "com.google.android.exoplayer2"
+        def talkFun = "com.talkfun.media.player"
         def tongYongRecycleView = "com.zhy.adapter.recyclerview"
         def stetho = "com.facebook.stetho"
         def ucrop = "com.yalantis.ucrop"
@@ -276,6 +297,8 @@ class AnalyzeTech {
         def klog = "com.socks.klog"
         def banner = "com.stx.xhb.xbanner"
         def autoLayout = "com.zhy.autolayout"
+        def fileDownload = "com.liulishuo.filedownloader"
+        def weibo = "com.sina.weibo.sdk"
 
 
         if (data.contains(indicator)) {
@@ -284,6 +307,14 @@ class AnalyzeTech {
 
         if (data.contains(pdf)) {
             PrintUtils.printMarkdownMessage("others：pdf的sdk")
+        }
+
+        if (data.contains(pdfium)) {
+            PrintUtils.printMarkdownMessage("others：pdf的sdk--pdfium")
+        }
+
+        if (data.contains(pdfviewer)) {
+            PrintUtils.printMarkdownMessage("others：pdf的sdk--pdfviewer")
         }
 
         if (data.contains(textView)) {
@@ -306,12 +337,20 @@ class AnalyzeTech {
             PrintUtils.printMarkdownMessage("others：crash统计-umeng")
         }
 
+        if (data.contains(bugly)) {
+            PrintUtils.printMarkdownMessage("others：crash统计-bugly")
+        }
+
         if (data.contains(ormlite)) {
             PrintUtils.printMarkdownMessage("others：ORM框架-ormlite")
         }
 
         if (data.contains(dbflow)) {
             PrintUtils.printMarkdownMessage("others：ORM框架-dbflow")
+        }
+
+        if (data.contains(greenDao)) {
+            PrintUtils.printMarkdownMessage("others：ORM框架-greenDao")
         }
 
         if (data.contains(tinker)) {
@@ -348,6 +387,14 @@ class AnalyzeTech {
 
         if (data.contains(ijk)) {
             PrintUtils.printMarkdownMessage("others：ijk直播sdk")
+        }
+
+        if (data.contains(exoplayer2)) {
+            PrintUtils.printMarkdownMessage("others：google播放器exoplayer2")
+        }
+
+        if (data.contains(talkFun)) {
+            PrintUtils.printMarkdownMessage("others：欢拓云播放器")
         }
 
         if (data.contains(tongYongRecycleView)) {
@@ -436,6 +483,14 @@ class AnalyzeTech {
 
         if (data.contains(autoLayout)) {
             PrintUtils.printMarkdownMessage("others：自动布局 ")
+        }
+
+        if (data.contains(fileDownload)) {
+            PrintUtils.printMarkdownMessage("others：流利说的filedownload ")
+        }
+
+        if (data.contains(weibo)) {
+            PrintUtils.printMarkdownMessage("others：weibo分享sdk ")
         }
     }
 }

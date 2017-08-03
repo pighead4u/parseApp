@@ -8,5 +8,6 @@
 build/
 gradle/
 gradlew*
-
+local.properties
+*.iml
 
