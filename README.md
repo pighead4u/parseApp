@@ -9,4 +9,10 @@
 
 ## 竞品apk：
 * 学而思的app
+* 存在的业务包名：
+    * com.tal
+    * com.xes.haibianonline
+    * com.xes.jazhanghui
+    * com.xes.xesspeiyou
+    
 
