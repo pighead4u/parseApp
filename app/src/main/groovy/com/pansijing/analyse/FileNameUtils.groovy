@@ -9,7 +9,7 @@ class FileNameUtils {
 
     def static getFileName(String source) {
         source = source.reverse()
-        def index = source.indexOf("\\")
+      def index = source.indexOf(File.separator)
         def subSource = source.substring(0, index).reverse()
         index = subSource.indexOf(".apk")
 
