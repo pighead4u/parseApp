@@ -31,7 +31,9 @@ class ParseSmaliFiles {
         ) {
             def index = it.getAbsolutePath().indexOf("smali")
             def tmpName = it.getAbsolutePath().substring(index)
-            tmpName = tmpName.replace('\\', '.')
+            println tmpName
+            println "--------------------" + File.separator
+            tmpName = tmpName.replace(File.separator, ".")
             index = tmpName.indexOf(".")
             tmpName = tmpName.substring(index + 1)
             tmpName = tmpName.reverse()
