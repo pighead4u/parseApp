@@ -4,6 +4,7 @@ class Main {
 
     static final SOURCE_DIR = "D:\\workspace\\parseapk\\apks"
     static final OUTPUT_DIR = "D:\\workspace\\parseapk\\decompession"
+    static final PARSE_DIR = "D:\\workspace\\parseapk\\parse\\"
 
     static void main(String[] args) {
         def dir = new File(SOURCE_DIR)
@@ -14,6 +15,7 @@ class Main {
             def data = ParseSmaliFiles.parseSmali(decompessDir)
 
             def parseFileName = FileNameUtils.getFileName(file.getAbsolutePath())
+            parseFileName = PARSE_DIR + parseFileName
             WriteResult.write2File(data, "${parseFileName}.txt")
 
             parseTech(data, parseFileName)

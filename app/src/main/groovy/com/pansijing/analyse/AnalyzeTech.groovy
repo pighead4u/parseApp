@@ -9,9 +9,13 @@ class AnalyzeTech {
 
     def static parseJsonTech(Set<String> data) {
         def gson = "com.google.gson"
+        def fastJson = "com.alibaba.fastjson"
 
         if (data.contains(gson)) {
             PrintUtils.printMarkdownMessage("JSON序列化框架：gson")
+        }
+        if (data.contains(fastJson)) {
+            PrintUtils.printMarkdownMessage("JSON序列化框架：fastjson")
         }
 
 
@@ -20,6 +24,7 @@ class AnalyzeTech {
     def static parseImageLoader(Set<String> data) {
         def glide = "com.bumptech.glide"
         def picasso = "com.squareup.picasso"
+        def universalimageloader = "com.nostra13.universalimageloader.core"
 
         if (data.contains(glide)) {
             PrintUtils.printMarkdownMessage("图片加载框架：glide")
@@ -29,13 +34,21 @@ class AnalyzeTech {
             PrintUtils.printMarkdownMessage("图片加载框架：picasso")
         }
 
+        if (data.contains(universalimageloader)) {
+            PrintUtils.printMarkdownMessage("图片加载框架：universalimageloader")
+        }
+
     }
 
     def static parseMapTech(Set<String> data) {
         def baiduMap = "com.baidu.location"
+        def gaoDeMap = "com.amap.api.maps"
 
         if (data.contains(baiduMap)) {
             PrintUtils.printMarkdownMessage("定位与地图：百度地图")
+        }
+        if (data.contains(gaoDeMap)) {
+            PrintUtils.printMarkdownMessage("定位与地图：高德地图")
         }
     }
 
@@ -55,12 +68,20 @@ class AnalyzeTech {
     def static parsePush(Set<String> data) {
         def xiaoMiPush = "com.xiaomi.push.thrift"
         def umengPush = "com.ta.utdid2"
+        def jPush = "cn.jpush.android"
+        def geTui = "com.igexin"
 
         if (data.contains(xiaoMiPush)) {
             PrintUtils.printMarkdownMessage("推送技术：小米推送")
         }
         if (data.contains(umengPush)) {
             PrintUtils.printMarkdownMessage("推送技术：umeng推送")
+        }
+        if (data.contains(jPush)) {
+            PrintUtils.printMarkdownMessage("推送技术：极光推送")
+        }
+        if (data.contains(geTui)) {
+            PrintUtils.printMarkdownMessage("推送技术：个推推送")
         }
     }
 
@@ -69,6 +90,7 @@ class AnalyzeTech {
         def okhttp2 = "com.squareup.okhttp"
         def okhttp3 = "okhttp3"
         def retrofit2 = "retrofit2"
+        def androidAsync = "com.koushikdutta.async"
 
         if (data.contains(asyncHttp)) {
             PrintUtils.printMarkdownMessage("网络请求使用：async-http")
@@ -84,6 +106,10 @@ class AnalyzeTech {
 
         if (data.contains(retrofit2)) {
             PrintUtils.printMarkdownMessage("网络请求使用：retrofit2")
+        }
+
+        if (data.contains(androidAsync)) {
+            PrintUtils.printMarkdownMessage("网络请求使用：androidAsync")
         }
 
     }
@@ -166,12 +192,16 @@ class AnalyzeTech {
     def static parseIMTech(Set<String> data) {
         def tecentZhiBoDanMu = "com.tencent.mm.sdk";
         def yunXin = "com.netease.nimlib"
+        def shengWang = "io.agora.rtc"
 
         if (data.contains(tecentZhiBoDanMu)) {
             PrintUtils.printMarkdownMessage("IM：直播时的聊天--腾讯IM")
         }
         if (data.contains(yunXin)) {
             PrintUtils.printMarkdownMessage("IM：云信")
+        }
+        if (data.contains(shengWang)) {
+            PrintUtils.printMarkdownMessage("IM：声网")
         }
     }
 
@@ -199,6 +229,19 @@ class AnalyzeTech {
         def ormlite = "com.j256.ormlite"
         def tinker = "com.tencent.tinker.lib"
         def multidex = "android.support.multidex"
+        def freeline = "com.antfortune.freeline"
+        def blockcanary = "com.github.moduth.blockcanary"
+        def leakcanary = "com.squareup.leakcanary"
+        def qiNiuZhiBo = "com.pili.pldroid.player"
+        def baoFeng = "tv.cjump.jni"
+        def ijk = "tv.danmaku.ijk.media.player"
+        def tongYongRecycleView = "com.zhy.adapter.recyclerview"
+        def stetho = "com.facebook.stetho"
+        def ucrop = "com.yalantis.ucrop"
+        def danMu = "master.flame.danmaku.danmaku.danmaku.parser"
+        def pinYin = "net.sourceforge.pinyin4j"
+        def xUilts = "org.xutils.xutils"
+        def gif = "pl.droidsonroids.gif"
 
         if (data.contains(indicator)) {
             PrintUtils.printMarkdownMessage("others：viewpager的indicator")
@@ -238,6 +281,58 @@ class AnalyzeTech {
 
         if (data.contains(multidex)) {
             PrintUtils.printMarkdownMessage("others：多dex-jar引用过多")
+        }
+
+        if (data.contains(freeline)) {
+            PrintUtils.printMarkdownMessage("others：freeline加速开发编译")
+        }
+
+        if (data.contains(blockcanary)) {
+            PrintUtils.printMarkdownMessage("others：blockcanary检测界面卡顿")
+        }
+
+        if (data.contains(leakcanary)) {
+            PrintUtils.printMarkdownMessage("others：leakcanary检测内存泄漏")
+        }
+
+        if (data.contains(qiNiuZhiBo)) {
+            PrintUtils.printMarkdownMessage("others：7牛直播sdk")
+        }
+
+        if (data.contains(baoFeng)) {
+            PrintUtils.printMarkdownMessage("others：暴风直播sdk")
+        }
+
+        if (data.contains(ijk)) {
+            PrintUtils.printMarkdownMessage("others：ijk直播sdk")
+        }
+
+        if (data.contains(tongYongRecycleView)) {
+            PrintUtils.printMarkdownMessage("others：通用recycleview")
+        }
+
+        if (data.contains(stetho)) {
+            PrintUtils.printMarkdownMessage("others：facebook网络调试工具-stetho")
+        }
+
+        if (data.contains(ucrop)) {
+            PrintUtils.printMarkdownMessage("others：图片裁剪库")
+        }
+
+        if (data.contains(danMu)) {
+            PrintUtils.printMarkdownMessage("others：烈焰大幕库-来自大B站")
+        }
+
+        if (data.contains(pinYin)) {
+            PrintUtils.printMarkdownMessage("others：查询汉字拼音")
+        }
+
+        if (data.contains(xUilts)) {
+            PrintUtils.printMarkdownMessage("others：xutils工具框架")
+        }
+
+        if (data.contains(gif)) {
+            PrintUtils.printMarkdownMessage("others：gif框架")
         }
     }
 }
