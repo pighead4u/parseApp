@@ -55,6 +55,7 @@ class AnalyzeTech {
     def static parsePayTech(Set<String> data) {
         def alipay = "com.alipay.sdk"
         def union = "com.unionpay"
+        def weiXin = "com.wxapi"
 
         if (data.contains(alipay)) {
             PrintUtils.printMarkdownMessage("支付：支付宝")
@@ -63,6 +64,10 @@ class AnalyzeTech {
         if (data.contains(union)) {
             PrintUtils.printMarkdownMessage("支付：银联支付")
         }
+
+        if (data.contains(weiXin)) {
+            PrintUtils.printMarkdownMessage("支付：微信支付")
+        }
     }
 
     def static parsePush(Set<String> data) {
@@ -70,6 +75,8 @@ class AnalyzeTech {
         def umengPush = "com.ta.utdid2"
         def jPush = "cn.jpush.android"
         def geTui = "com.igexin"
+        def baiduPush = "com.baidu.android.pushservice"
+        def gsm = "com.google.android.gms"
 
         if (data.contains(xiaoMiPush)) {
             PrintUtils.printMarkdownMessage("推送技术：小米推送")
@@ -82,6 +89,12 @@ class AnalyzeTech {
         }
         if (data.contains(geTui)) {
             PrintUtils.printMarkdownMessage("推送技术：个推推送")
+        }
+        if (data.contains(baiduPush)) {
+            PrintUtils.printMarkdownMessage("推送技术：百度推送")
+        }
+        if (data.contains(gsm)) {
+            PrintUtils.printMarkdownMessage("推送技术：google-gsm推送")
         }
     }
 
@@ -176,6 +189,7 @@ class AnalyzeTech {
         def pullToRefresh = "com.handmark.pulltorefresh.library"
         def cube = "in.srain.cube.views.ptr"
         def shiZheFei = "com.shizhefei.fragment"
+        def tkRefresh = "com.lcodecore.tkrefreshlayout"
 
         if (data.contains(pullToRefresh)) {
             PrintUtils.printMarkdownMessage("下拉刷新技术：pullToRefresh（这个技术有点过时）")
@@ -186,6 +200,9 @@ class AnalyzeTech {
 
         if (data.contains(shiZheFei)) {
             PrintUtils.printMarkdownMessage("下拉刷新技术：主要用于下拉刷新加载，失败，加载，空数据，成功的界面切换")
+        }
+        if (data.contains(tkRefresh)) {
+            PrintUtils.printMarkdownMessage("下拉刷新技术：tkRefresh下拉刷新")
         }
     }
 
@@ -227,6 +244,7 @@ class AnalyzeTech {
         def zxing = "com.google.zxing"
         def umeng = "com.umeng"
         def ormlite = "com.j256.ormlite"
+        def dbflow = "com.raizlabs.android.dbflow"
         def tinker = "com.tencent.tinker.lib"
         def multidex = "android.support.multidex"
         def freeline = "com.antfortune.freeline"
@@ -234,6 +252,7 @@ class AnalyzeTech {
         def leakcanary = "com.squareup.leakcanary"
         def qiNiuZhiBo = "com.pili.pldroid.player"
         def baoFeng = "tv.cjump.jni"
+        def jieCao = "fm.jiecao.jcvideoplayer_lib"
         def ijk = "tv.danmaku.ijk.media.player"
         def tongYongRecycleView = "com.zhy.adapter.recyclerview"
         def stetho = "com.facebook.stetho"
@@ -242,6 +261,22 @@ class AnalyzeTech {
         def pinYin = "net.sourceforge.pinyin4j"
         def xUilts = "org.xutils.xutils"
         def gif = "pl.droidsonroids.gif"
+        def viewPager = "net.lucode.hackware.magicindicator"
+        def excel = "cn.zhouchaoyuan.excelpanel"
+        def actionSheet = "com.baoyz.actionsheet"
+        def pickerView = "com.bigkoo.pickerview"
+        def boxing = "com.bilibili.boxing"
+        def charting = "com.github.mikephil.charting"
+        def progressbar = "com.daimajia.numberprogressbar"
+        def aviProgressbar = "com.wang.avi"
+        def statusbar = "com.jaeger.library"
+        def roundImageView = "com.joooonho"
+        def commonadapter = "com.mcxtzhang.commonadapter"
+        def chuckHttp = "com.readystatesoftware.chuck"
+        def klog = "com.socks.klog"
+        def banner = "com.stx.xhb.xbanner"
+        def autoLayout = "com.zhy.autolayout"
+
 
         if (data.contains(indicator)) {
             PrintUtils.printMarkdownMessage("others：viewpager的indicator")
@@ -275,6 +310,10 @@ class AnalyzeTech {
             PrintUtils.printMarkdownMessage("others：ORM框架-ormlite")
         }
 
+        if (data.contains(dbflow)) {
+            PrintUtils.printMarkdownMessage("others：ORM框架-dbflow")
+        }
+
         if (data.contains(tinker)) {
             PrintUtils.printMarkdownMessage("others：热修复技术-tinker")
         }
@@ -301,6 +340,10 @@ class AnalyzeTech {
 
         if (data.contains(baoFeng)) {
             PrintUtils.printMarkdownMessage("others：暴风直播sdk")
+        }
+
+        if (data.contains(jieCao)) {
+            PrintUtils.printMarkdownMessage("others：节操播放器")
         }
 
         if (data.contains(ijk)) {
@@ -333,6 +376,66 @@ class AnalyzeTech {
 
         if (data.contains(gif)) {
             PrintUtils.printMarkdownMessage("others：gif框架")
+        }
+
+        if (data.contains(viewPager)) {
+            PrintUtils.printMarkdownMessage("others：千变万化的ViewPager指示器")
+        }
+
+        if (data.contains(excel)) {
+            PrintUtils.printMarkdownMessage("others：excel效果")
+        }
+
+        if (data.contains(actionSheet)) {
+            PrintUtils.printMarkdownMessage("others：仿ios的ActionSheet菜单 ")
+        }
+
+        if (data.contains(pickerView)) {
+            PrintUtils.printMarkdownMessage("others：图片选择器 ")
+        }
+
+        if (data.contains(boxing)) {
+            PrintUtils.printMarkdownMessage("others：bilibili的多媒体选择器 ")
+        }
+
+        if (data.contains(charting)) {
+            PrintUtils.printMarkdownMessage("others：图表库 ")
+        }
+
+        if (data.contains(progressbar)) {
+            PrintUtils.printMarkdownMessage("others：daimajia的progressbar ")
+        }
+
+        if (data.contains(aviProgressbar)) {
+            PrintUtils.printMarkdownMessage("others：avi的progressbar ")
+        }
+
+        if (data.contains(statusbar)) {
+            PrintUtils.printMarkdownMessage("others：沉浸式的statusbar ")
+        }
+
+        if (data.contains(roundImageView)) {
+            PrintUtils.printMarkdownMessage("others：圆形图片 ")
+        }
+
+        if (data.contains(commonadapter)) {
+            PrintUtils.printMarkdownMessage("others：搞定所有viewgroup的adapter ")
+        }
+
+        if (data.contains(chuckHttp)) {
+            PrintUtils.printMarkdownMessage("others：OkHttp客户端的应用程序内HTTP检查器 ")
+        }
+
+        if (data.contains(klog)) {
+            PrintUtils.printMarkdownMessage("others：klog日志工具 ")
+        }
+
+        if (data.contains(banner)) {
+            PrintUtils.printMarkdownMessage("others：图片轮播 ")
+        }
+
+        if (data.contains(autoLayout)) {
+            PrintUtils.printMarkdownMessage("others：自动布局 ")
         }
     }
 }
