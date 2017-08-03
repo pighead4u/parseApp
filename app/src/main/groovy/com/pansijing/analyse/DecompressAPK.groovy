@@ -18,7 +18,9 @@ class DecompressAPK {
 
         decoder.close()
 
-        return outDir.getAbsolutePath()
+        PrintUtils.printMessage("decompress apk finish!!!")
+
+        outDir.getAbsolutePath()
 
     }
 }

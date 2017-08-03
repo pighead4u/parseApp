@@ -6,16 +6,23 @@ class ParseSmaliFiles {
 
     def static parseSmali(String appDir) {
         def dir = new File(appDir)
+        def result = new HashSet()
         dir.eachDir { smali ->
             if (smali.getName().toLowerCase().contains("smali")) {
-                recordDirs(smali)
+                def data = recordDirs(smali)
+                result.addAll(data)
+
             }
 
         }
+
+        PrintUtils.printMessage("parse smali finish!!!")
+
+        result
     }
 
     def static recordDirs(File file) {
-        def result = new HashSet<String>()
+        def data = new HashSet<String>()
 
         file.traverse(type: FileType.FILES,
                 nameFilter: ~/.*\.smali/
@@ -32,10 +39,10 @@ class ParseSmaliFiles {
             tmpName = tmpName.substring(index + 1)
             tmpName = tmpName.reverse()
 
-            result.add(tmpName)
+            data.add(tmpName)
         }
 
-        WriteResult.write2File(result, "log.txt")
+        data
 
     }
 
