@@ -334,7 +334,7 @@ class AnalyzeTech {
     def pickerView = "com.bigkoo.pickerview"
     def pickerViewLikeWeiXin = "me.nereo.multi_image_selector"
     def boxing = "com.bilibili.boxing"
-    def charting = "com.github.mikephil.charting"
+    def charting = "com.github.mikephil.charting.charts"
     def progressbar = "com.daimajia.numberprogressbar"
     def aviProgressbar = "com.wang.avi"
     def statusbar = "com.jaeger.library"
