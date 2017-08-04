@@ -23,6 +23,13 @@ public interface IPackageDAO {
     PackageInfo getPackageInfo4Id(Integer id);
 
     /**
+     * 获取指定name的Package信息
+     *
+     * @return PackageInfo
+     **/
+    PackageInfo getPackageInfoByName(String name);
+
+    /**
      * 获取指定报名的Package信息
      *
      * @retrun List<PackageInfo>

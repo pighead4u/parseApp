@@ -8,6 +8,7 @@ package com.pansijing.analyse
 class PrintUtils {
 
     static File sFile
+    static List<String> sData = new ArrayList<>()
 
     def static createMarkdownFile(String fileName, String title) {
         sFile = new File(fileName)
@@ -29,7 +30,15 @@ class PrintUtils {
     }
 
     def static printMarkdownMessage(String message) {
-        sFile.append("* ${message} \n")
+        sData.add("* ${message} \n")
+    }
+
+    def static printFlush() {
+        Collections.sort(sData)
+
+        sData.each {
+            sFile.append(it)
+        }
     }
 
     def static printMessage(String message) {

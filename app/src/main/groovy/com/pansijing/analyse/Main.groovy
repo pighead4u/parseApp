@@ -1,5 +1,8 @@
 package com.pansijing.analyse
 
+import com.pansijing.analyse.dao.PackageDAO
+import com.pansijing.analyse.db.DatabaseHelper
+
 class Main {
 
     static final SOURCE_DIR = "D:\\workspace\\parseapk\\apks"
@@ -14,28 +17,34 @@ class Main {
             String decompessDir = DecompressAPK.decompress(file.getAbsolutePath(), OUTPUT_DIR)
             def data = ParseSmaliFiles.parseSmali(decompessDir)
 
+            def result = new ArrayList()
+
+            result.addAll(data)
+
+            Collections.sort(result)
+
             def parseFileName = FileNameUtils.getFileName(file.getAbsolutePath())
             parseFileName = PARSE_DIR + parseFileName
-            WriteResult.write2File(data, "${parseFileName}.txt")
+            WriteResult.write2File(result, "${parseFileName}.txt")
 
-            parseTech(data, parseFileName)
+            parseTech(result, parseFileName)
 
         }
     }
 
-    static void parseTech(Set<String> data, String parseFileName) {
+    static void parseTech(List<String> data, String parseFileName) {
         PrintUtils.createMarkdownFile("${parseFileName}.md", "android-app技术分析")
-        AnalyzeTech.parseJsonTech(data)
-        AnalyzeTech.parseImageLoader(data)
-        AnalyzeTech.parseMapTech(data)
-        AnalyzeTech.parsePayTech(data)
-        AnalyzeTech.parsePush(data)
-        AnalyzeTech.parseNetwork(data)
-        AnalyzeTech.parsePullToRefresh(data)
-        AnalyzeTech.parseIMTech(data)
-        AnalyzeTech.parseKeFu(data)
-        AnalyzeTech.parseOthers(data)
-        AnalyzeTech.parseNewTech(data)
+        DatabaseHelper.initTable()
+
+        data.each {
+            def packageInfo = PackageDAO.getInstance().getPackageInfoByName(it)
+            if (packageInfo != null) {
+                PrintUtils.printMarkdownMessage(packageInfo.msg)
+            }
+        }
+
+        PrintUtils.printFlush()
 
     }
+
 }

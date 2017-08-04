@@ -90,6 +90,25 @@ public class PackageDAO implements IPackageDAO {
         return packageInfo;
     }
 
+    @Override
+    public PackageInfo getPackageInfoByName(String name) {
+        List<PackageInfo> packageInfos = null;
+
+        try {
+            packageInfos = getDao().queryForEq("name", name);
+            if (packageInfos != null && packageInfos.size() > 0) {
+                return packageInfos.get(0);
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.warn("查询name为" + name + "Package信息失败!" + e.getMessage());
+            return null;
+        }
+
+    }
+
 
     /**
      * 获取指定报名的Package信息

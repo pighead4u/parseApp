@@ -1,6 +1,4 @@
-package com.pansijing.analyse.db;/**
- * Created by MirsFang on 2017/8/4.
- */
+package com.pansijing.analyse.db;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
