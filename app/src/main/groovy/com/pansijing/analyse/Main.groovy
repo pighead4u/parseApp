@@ -24,7 +24,7 @@ class Main {
     }
 
     static void parseTech(Set<String> data, String parseFileName) {
-        PrintUtils.createMarkdownFile("${parseFileName}.md", "学而思android-app技术分析")
+        PrintUtils.createMarkdownFile("${parseFileName}.md", "android-app技术分析")
         AnalyzeTech.parseJsonTech(data)
         AnalyzeTech.parseImageLoader(data)
         AnalyzeTech.parseMapTech(data)

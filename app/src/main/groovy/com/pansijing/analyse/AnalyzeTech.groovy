@@ -82,12 +82,13 @@ class AnalyzeTech {
   }
 
   def static parsePush(Set<String> data) {
-    def xiaoMiPush = "com.xiaomi.push.thrift"
+    def xiaoMiPush = "com.xiaomi.push.service"
     def umengPush = "com.ta.utdid2"
     def jPush = "cn.jpush.android"
     def geTui = "com.igexin"
     def baiduPush = "com.baidu.android.pushservice"
-    def gsm = "com.google.android.gms"
+    def gms = "com.google.android.gms"
+    def huaWei = "com.huawei.android.pushagent"
 
     if (data.contains(xiaoMiPush)) {
       PrintUtils.printMarkdownMessage("推送技术：小米推送")
@@ -104,8 +105,11 @@ class AnalyzeTech {
     if (data.contains(baiduPush)) {
       PrintUtils.printMarkdownMessage("推送技术：百度推送")
     }
-    if (data.contains(gsm)) {
-      PrintUtils.printMarkdownMessage("推送技术：google-gsm推送")
+    if (data.contains(gms)) {
+      PrintUtils.printMarkdownMessage("推送技术：google-gms推送")
+    }
+    if (data.contains(huaWei)) {
+      PrintUtils.printMarkdownMessage("推送技术：华为推送")
     }
   }
 
@@ -154,6 +158,10 @@ class AnalyzeTech {
     def react = "com.facebook.react"
     def yoga = "com.facebook.yoga"
     def samsung = "com.samsung.android.sdk.multiwindow"
+    def iRui = "cn.com.iresearch.mapptracker"
+    def lottie = "com.airbnb.lottie"
+    def cardboard = "com.google.vrtoolkit.cardboard"
+    def luaj = "org.luaj.vm2"
 
     if (data.contains(databinding)) {
       PrintUtils.printMarkdownMessage("新技术：尝试了mvvm的项目结构")
@@ -218,6 +226,22 @@ class AnalyzeTech {
 
     if (data.contains(samsung)) {
       PrintUtils.printMarkdownMessage("新技术：三星multiwindow")
+    }
+
+    if (data.contains(iRui)) {
+      PrintUtils.printMarkdownMessage("新技术：移动用户流量审计-艾瑞咨询官")
+    }
+
+    if (data.contains(lottie)) {
+      PrintUtils.printMarkdownMessage("新技术：airbnb公司的动画框架-lottie")
+    }
+
+    if (data.contains(cardboard)) {
+      PrintUtils.printMarkdownMessage("新技术：google公司出的项目-cardboard")
+    }
+
+    if (data.contains(luaj)) {
+      PrintUtils.printMarkdownMessage("新技术：luaj")
     }
   }
 
@@ -310,7 +334,7 @@ class AnalyzeTech {
     def pickerView = "com.bigkoo.pickerview"
     def pickerViewLikeWeiXin = "me.nereo.multi_image_selector"
     def boxing = "com.bilibili.boxing"
-    def charting = "com.github.mikephil.charting"
+    def charting = "com.github.mikephil.charting.charts"
     def progressbar = "com.daimajia.numberprogressbar"
     def aviProgressbar = "com.wang.avi"
     def statusbar = "com.jaeger.library"
@@ -329,6 +353,11 @@ class AnalyzeTech {
     def uuid = "com.eaio.util"
     def un7z = "com.hu.andun7z"
     def cardSDK = "io.card.payment"
+    def photodraweeview = "me.relex.photodraweeview"
+    def apacheCollection = "org.apache.commons.collections"
+    def apacheCodec = "org.apache.commons.codec"
+    def cocos2d = "org.cocos2dx.lib"
+    def jsoup = "org.jsoup"
 
 
     if (data.contains(indicator)) {
@@ -557,6 +586,26 @@ class AnalyzeTech {
 
     if (data.contains(cardSDK)) {
       PrintUtils.printMarkdownMessage("others：银行卡号sdk")
+    }
+
+    if (data.contains(photodraweeview)) {
+      PrintUtils.printMarkdownMessage("others：使用Fresco 实现大图浏览(支持手势放大、拖拽)--photodraweeview")
+    }
+
+    if (data.contains(apacheCollection)) {
+      PrintUtils.printMarkdownMessage("others：apache内的commons-collections")
+    }
+
+    if (data.contains(apacheCodec)) {
+      PrintUtils.printMarkdownMessage("others：apache内的commons-codec")
+    }
+
+    if (data.contains(cocos2d)) {
+      PrintUtils.printMarkdownMessage("others：使用了cocos2d")
+    }
+
+    if (data.contains(jsoup)) {
+      PrintUtils.printMarkdownMessage("others：使用了jsoup")
     }
   }
 }
