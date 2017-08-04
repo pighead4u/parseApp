@@ -4,6 +4,8 @@ apply plugin: 'groovy'
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'org.codehaus.groovy:groovy-all:2.4.12'
+    compile group: 'com.j256.ormlite', name: 'ormlite-jdbc', version: '4.48'
+
 }
 
 version = '1.0.0'
