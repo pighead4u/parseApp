@@ -1,19 +1,17 @@
-package com.pansijing.analyse.model;/**
- * Created by MirsFang on 2017/8/4.
- */
+package com.pansijing.analyse.model
 
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
+import com.j256.ormlite.field.DatabaseField
+import com.j256.ormlite.table.DatabaseTable
 
 /***
- *作者：MirsFang    
- *模式：       
- *时间：2017/08/04/上午11:02  
- *备注      
+ * 作者：MirsFang
+ * 模式：
+ * 时间：2017/08/04/上午11:02
+ * 备注
  ***/
 
 @DatabaseTable(tableName = "PackageInfo")
-public class PackageInfo {
+class PackageInfo {
 
     @DatabaseField(generatedId = true)
     private long id;

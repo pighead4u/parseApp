@@ -1,25 +1,21 @@
-package com.pansijing.analyse.dao;/**
- * Created by MirsFang on 2017/8/4.
- */
+package com.pansijing.analyse.dao
 
-import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.logger.Logger;
-import com.j256.ormlite.logger.LoggerFactory;
-import com.pansijing.analyse.db.DatabaseHelper;
-import com.pansijing.analyse.model.PackageInfo;
+import com.j256.ormlite.dao.Dao
+import com.j256.ormlite.logger.Logger
+import com.j256.ormlite.logger.LoggerFactory
+import com.pansijing.analyse.db.DatabaseHelper
+import com.pansijing.analyse.model.PackageInfo
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLException
 
 /***
- *作者：MirsFang    
- *模式：       
- *时间：2017/08/04/上午11:19  
- *备注      
+ * 作者：MirsFang
+ * 模式：
+ * 时间：2017/08/04/上午11:19
+ * 备注
  ***/
 
-public class PackageDAO implements IPackageDAO {
+class PackageDAO implements IPackageDAO {
     private static Logger logger = LoggerFactory.getLogger(DatabaseHelper.class);
     private static IPackageDAO packageDAO;
 
@@ -39,7 +35,7 @@ public class PackageDAO implements IPackageDAO {
     private Dao<PackageInfo, Integer> getDao() {
         Dao dao = null;
         try {
-            dao = DatabaseHelper.GetPackageInfoDao();
+            dao = DatabaseHelper.getPackageInfoDao();
         } catch (SQLException e) {
             e.printStackTrace();
             logger.warn("获取链接失败!" + e.getMessage());
@@ -47,12 +43,11 @@ public class PackageDAO implements IPackageDAO {
         return dao;
     }
 
-
     /**
      * 获取所有的Package信息
      *
      * @return ArrayList
-     **/
+     * */
     @Override
     public List<PackageInfo> getAllPackageInfo() {
         List<PackageInfo> packageInfos = new ArrayList<>();
@@ -75,7 +70,7 @@ public class PackageDAO implements IPackageDAO {
      * 获取指定Id的Package信息
      *
      * @return PackageInfo
-     **/
+     * */
     @Override
     public PackageInfo getPackageInfo4Id(Integer id) {
         PackageInfo packageInfo = null;
@@ -109,12 +104,11 @@ public class PackageDAO implements IPackageDAO {
 
     }
 
-
     /**
      * 获取指定报名的Package信息
      *
-     * @retrun List<PackageInfo>
-     **/
+     * @retrun List < PackageInfo >
+     * */
     @Override
     public List<PackageInfo> getPackageInfo4Package(String packageName) {
         List<PackageInfo> packageInfos = new ArrayList<>();
@@ -131,7 +125,6 @@ public class PackageDAO implements IPackageDAO {
 
         return packageInfos;
     }
-
 
     /**
      * 插入一个packageInfo,假如他不存在
@@ -156,7 +149,6 @@ public class PackageDAO implements IPackageDAO {
         }
     }
 
-
     /**
      * 插入一个packageInfo集合,假如他不存在
      **/
@@ -171,7 +163,6 @@ public class PackageDAO implements IPackageDAO {
             insertPackageInfo(packageInfo);
         }
     }
-
 
     /**
      * 插入或者更新一个packageInfo

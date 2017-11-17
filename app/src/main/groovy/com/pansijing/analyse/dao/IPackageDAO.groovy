@@ -2,38 +2,36 @@ package com.pansijing.analyse.dao;
 
 import com.pansijing.analyse.model.PackageInfo;
 
-import java.util.List;
-
 /**
  * Created by MirsFang on 2017/8/4.
  */
-public interface IPackageDAO {
+interface IPackageDAO {
     /**
      * 获取所有的Package信息
      *
      * @return ArrayList
-     **/
+     * */
     List<PackageInfo> getAllPackageInfo();
 
     /**
      * 获取指定Id的Package信息
      *
      * @return PackageInfo
-     **/
+     * */
     PackageInfo getPackageInfo4Id(Integer id);
 
     /**
      * 获取指定name的Package信息
      *
      * @return PackageInfo
-     **/
+     * */
     PackageInfo getPackageInfoByName(String name);
 
     /**
      * 获取指定报名的Package信息
      *
-     * @retrun List<PackageInfo>
-     **/
+     * @retrun List < PackageInfo >
+     * */
     List<PackageInfo> getPackageInfo4Package(String packageName);
 
     /**
